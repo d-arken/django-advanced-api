@@ -10,6 +10,6 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./app /app
 
-RUN adduser -D eddie
+RUN useradd -ms /bin/bash eddie
 USER eddie
 
