@@ -4,12 +4,13 @@ from django.utils.translation import gettext as _
 
 from core import models
 
+
 class UserAdmin(BaseUserAdmin):
     ordering = ['id']
     list_display = ['email', 'name']
     fieldsets = (
         (
-            None, 
+            None,
             {
                 'fields': ('email', 'password')
             }
@@ -27,7 +28,7 @@ class UserAdmin(BaseUserAdmin):
             }
         ),
         (
-            _('Important dates'), 
+            _('Important dates'),
             {
                 'fields': ('last_login',)
             }

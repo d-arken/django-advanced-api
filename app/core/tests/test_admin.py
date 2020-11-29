@@ -1,7 +1,7 @@
-from unittest import runner
 from django.test import TestCase, Client
 from django.contrib.auth import get_user_model
 from django.urls import reverse
+
 
 class AdminSiteTests(TestCase):
     def setUp(self) -> None:
@@ -18,7 +18,6 @@ class AdminSiteTests(TestCase):
             name='Shy user'
         )
 
-
     def test_users_listed(self):
         url = reverse('admin:core_user_changelist')
 
@@ -34,7 +33,7 @@ class AdminSiteTests(TestCase):
         res = self.client.get(url)
 
         self.assertEqual(res.status_code, 200)
-        
+
     def test_create_user_page(self):
         url = reverse('admin:core_user_add')
         res = self.client.get(url)
