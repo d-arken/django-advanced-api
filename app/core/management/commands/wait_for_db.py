@@ -17,5 +17,5 @@ class Command(BaseCommand):
             except OperationalError:
                 self.stdout.write('db not ready, waiting 1 more sec.')
                 time.sleep(1)
-        
+
         self.stdout.write(self.style.SUCCESS('db is finally ready!'))
